@@ -38,6 +38,33 @@ variable "remote_state_consumer_ids" {
   type        = set(string)
 }
 
+variable "vcs_repos" {
+  default     = null
+  description = "Settings for the workspace's VCS repository"
+  type = object({
+    identifier = string
+    branch     = string
+  })
+}
+
+variable "working_directory" {
+  default     = ""
+  description = "A relative path that Terraform will execute within"
+  type        = string
+}
+
+variable "trigger_patterns" {
+  default     = []
+  description = "List of glob patterns that describe the files Terraform Cloud monitors for changes. Trigger patterns are always appended to the root directory of the repository"
+  type        = list(string)
+}
+
+variable "speculative_enabled" {
+  default     = true
+  description = "Indicates whether this workspace allows speculative plans"
+  type        = bool
+}
+
 ### AWS AUTH PROVIDER
 variable "aws_provider_auth" {
   default     = false

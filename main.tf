@@ -7,6 +7,19 @@ resource "tfe_workspace" "this" {
   tag_names                 = var.tag_names
   terraform_version         = var.terraform_reqiured_version
   remote_state_consumer_ids = var.remote_state_consumer_ids
+  working_directory         = var.working_directory
+  trigger_patterns          = var.trigger_patterns
+  speculative_enabled       = var.speculative_enabled
+
+  dynamic "vcs_repo" {
+    for_each = var.vcs_repos == null ? [] : [var.vcs_repos]
+
+    content {
+      github_app_installation_id = data.tfe_github_app_installation.gha_installation.id
+      identifier                 = vcs_repo.value.identifier
+      branch                     = vcs_repo.value.branch
+    }
+  }
 }
 
 resource "tfe_variable" "tfc_aws_provider_auth" {
