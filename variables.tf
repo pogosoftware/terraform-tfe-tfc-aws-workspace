@@ -65,6 +65,16 @@ variable "speculative_enabled" {
   type        = bool
 }
 
+variable "workspace_variables" {
+  default     = {}
+  description = "The workspace variables"
+  type = map(object({
+    value       = string
+    category    = string
+    description = optional(string)
+  }))
+}
+
 ### AWS AUTH PROVIDER
 variable "aws_provider_auth" {
   default     = false

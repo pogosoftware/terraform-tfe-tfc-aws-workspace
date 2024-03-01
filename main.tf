@@ -57,3 +57,13 @@ resource "tfe_variable" "tfc_aws_apply_role_arn" {
   category     = "env"
   workspace_id = tfe_workspace.this.id
 }
+
+resource "tfe_variable" "this" {
+  for_each = var.workspace_variables
+
+  key          = each.key
+  value        = each.value.value
+  category     = lookup(each.value, "category", "terraform")
+  workspace_id = tfe_workspace.this.id
+  description  = lookup(each.value, "description", "")
+}
