@@ -23,6 +23,7 @@ No modules.
 | [tfe_variable.tfc_aws_apply_role_arn](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_variable.tfc_aws_plan_role_arn](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_variable.tfc_aws_provider_auth](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
+| [tfe_variable.tfc_aws_region](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_variable.tfc_aws_workload_identity_audience](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_variable.this](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_workspace.this](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
@@ -37,6 +38,7 @@ No modules.
 | <a name="input_aws_apply_role_arn"></a> [aws\_apply\_role\_arn](#input\_aws\_apply\_role\_arn) | The ARN of the role to use for the apply phase of a run.Required if `tfc_aws_provider_auth` is set to `true`. | `string` | `null` | no |
 | <a name="input_aws_plan_role_arn"></a> [aws\_plan\_role\_arn](#input\_aws\_plan\_role\_arn) | The ARN of the role to use for the plan phase of a run. Required if `tfc_aws_provider_auth` is set to `true`. | `string` | `null` | no |
 | <a name="input_aws_provider_auth"></a> [aws\_provider\_auth](#input\_aws\_provider\_auth) | Determinate to inject AWS creadentials or not. Defaults to `false` | `bool` | `false` | no |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The name of AWS region | `string` | `"eu-central-1"` | no |
 | <a name="input_aws_workload_identity_audience"></a> [aws\_workload\_identity\_audience](#input\_aws\_workload\_identity\_audience) | Will be used as the aud claim for the identity token. Required if `tfc_aws_provider_auth` is set to `true`. Defaults to `aws.workload.identity` | `string` | `"aws.workload.identity"` | no |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | The name of TFC project | `string` | n/a | yes |
 | <a name="input_queue_all_runs"></a> [queue\_all\_runs](#input\_queue\_all\_runs) | Determinates to queue all runs or not. Defaults to `false` | `bool` | `false` | no |
