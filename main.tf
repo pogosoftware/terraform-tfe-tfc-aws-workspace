@@ -31,6 +31,15 @@ resource "tfe_variable" "tfc_aws_provider_auth" {
   workspace_id = tfe_workspace.this.id
 }
 
+resource "tfe_variable" "tfc_aws_region" {
+  count = local.tfc_aws_provider_auth
+
+  key          = "AWS_REGION"
+  value        = var.aws_region
+  category     = "env"
+  workspace_id = tfe_workspace.this.id
+}
+
 resource "tfe_variable" "tfc_aws_workload_identity_audience" {
   count = local.tfc_aws_provider_auth
 

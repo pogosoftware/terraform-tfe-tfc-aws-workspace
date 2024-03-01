@@ -82,6 +82,12 @@ variable "aws_provider_auth" {
   type        = bool
 }
 
+variable "aws_region" {
+  default     = "eu-central-1"
+  description = "The name of AWS region"
+  type        = string
+}
+
 variable "aws_workload_identity_audience" {
   default     = "aws.workload.identity"
   description = "Will be used as the aud claim for the identity token. Required if `tfc_aws_provider_auth` is set to `true`. Defaults to `aws.workload.identity`"
