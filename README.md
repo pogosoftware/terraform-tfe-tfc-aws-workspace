@@ -24,6 +24,7 @@ No modules.
 | [tfe_variable.tfc_aws_plan_role_arn](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_variable.tfc_aws_provider_auth](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_variable.tfc_aws_workload_identity_audience](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
+| [tfe_variable.this](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/variable) | resource |
 | [tfe_workspace.this](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/workspace) | resource |
 | [tfe_github_app_installation.gha_installation](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/github_app_installation) | data source |
 | [tfe_organization.this](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/data-sources/organization) | data source |
@@ -47,6 +48,7 @@ No modules.
 | <a name="input_vcs_repos"></a> [vcs\_repos](#input\_vcs\_repos) | Settings for the workspace's VCS repository | <pre>object({<br>    identifier = string<br>    branch     = string<br>  })</pre> | `null` | no |
 | <a name="input_working_directory"></a> [working\_directory](#input\_working\_directory) | A relative path that Terraform will execute within | `string` | `""` | no |
 | <a name="input_workspace"></a> [workspace](#input\_workspace) | The name of TFC workspace | `string` | n/a | yes |
+| <a name="input_workspace_variables"></a> [workspace\_variables](#input\_workspace\_variables) | The workspace variables | <pre>map(object({<br>    value       = string<br>    category    = string<br>    description = optional(string)<br>  }))</pre> | `{}` | no |
 
 ## Outputs
 
